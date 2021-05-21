@@ -244,8 +244,20 @@ function generateAuthors(){
   const authorLinkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor  + '</span></a></li>';
 
   console.log('authorLinkHTML', authorLinkHTML);
-  }
 
+  html = html + authorLinkHTML;
+
+  authorWrapper.innerHTML = html;
+  console.log(authorWrapper.innerHTML);
+  }
 }
 
 generateAuthors();
+
+const authorClickHandler = function (event) {
+
+  event.preventDefault();
+  const clickedElement = this;
+  const href = clickedElement.getAttribute('href');
+
+}
