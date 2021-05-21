@@ -278,3 +278,9 @@ const authorClickHandler = function (event) {
   generateTitleLinks('[data-author="' + author + '"]');
 
 }
+
+const addClickListenersToAuthors = function () {
+
+
+  
+}
