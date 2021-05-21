@@ -267,7 +267,7 @@ const authorClickHandler = function (event) {
 
   const activeAuthorLinks = document.querySelector('a.active[href^="#author-"]');
   console.log('activeAuthorLinks:', activeAuthorLinks);
-  
+
   for (let activeAuthor of activeAuthorLinks) {
 
     activeAuthor.classList.remove('active');
@@ -280,7 +280,6 @@ const authorClickHandler = function (event) {
 
     author.classList.add('active');
   }
-
   generateTitleLinks('[data-author="' + author + '"]');
 
 }
