@@ -63,8 +63,9 @@ function generateTitleLinks(customSelector = '') {
 
   /* for each article */
 
-  const articles = document.querySelectorAll(optArticleSelector);
-
+  const articles = document.querySelectorAll(optArticleSelector + customSelector);
+  console.log(customSelector);
+  console.log(articles);
   let html = '';
 
   for (let article of articles) {
@@ -213,6 +214,8 @@ function tagClickHandler(event){
 function addClickListenersToTags(){
   /* find all links to tags */
 
+  const tagLinks = document.querySelectorAll('a[href^="tag-"]');
+  console.log('tagLinks', tagLinks);
   /* START LOOP: for each link */
 
     /* add tagClickHandler as event listener for that link */
