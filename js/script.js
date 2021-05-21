@@ -258,10 +258,16 @@ const authorClickHandler = function (event) {
 
   event.preventDefault();
   const clickedElement = this;
-  const href = clickedElement.getAttribute('href');
-  const author = href.replace('#author-', '');
-  const activeAuthorLinks = document.querySelector('a.active[href^="#author-"]');
 
+  const href = clickedElement.getAttribute('href');
+  console.log('href:', href)
+
+  const author = href.replace('#author-', '');
+  console.log('author:', author);
+
+  const activeAuthorLinks = document.querySelector('a.active[href^="#author-"]');
+  console.log('activeAuthorLinks:', activeAuthorLinks);
+  
   for (let activeAuthor of activeAuthorLinks) {
 
     activeAuthor.classList.remove('active');
@@ -281,6 +287,12 @@ const authorClickHandler = function (event) {
 
 const addClickListenersToAuthors = function () {
 
+  const authorLinks = document.querySelectorAll('a[href^="author-"]');
 
-  
+  for (let author of authorLinks) {
+
+    author.addEventListener('click', authorClickHandler);
+
+  }
+  addClickListenersToAuthors();
 }
