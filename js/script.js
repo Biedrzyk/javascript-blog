@@ -51,7 +51,8 @@ const titleClickHandler = function (event) {
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optAuthorSelector = '.post-author';
 
 function generateTitleLinks(customSelector = '') {
 
@@ -227,6 +228,16 @@ function addClickListenersToTags(){
 addClickListenersToTags();
 
 function generateAuthors(){
+  
+  const articles = document.querySelectorAll(optArticleSelector);
+  
+  for (let article of articles) {
+
+  const authorWrapper = document.querySelectorAll(optAuthorSelector);
+
+  
+
+  }
 
 }
 
