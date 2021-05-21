@@ -46,7 +46,7 @@ const titleClickHandler = function (event) {
   targetArticle.classList.add('active');
   console.log(targetArticle);
 
-}
+};
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -260,7 +260,7 @@ const authorClickHandler = function (event) {
   const clickedElement = this;
 
   const href = clickedElement.getAttribute('href');
-  console.log('href:', href)
+  console.log('href:', href);
 
   const author = href.replace('#author-', '');
   console.log('author:', author);
@@ -282,7 +282,7 @@ const authorClickHandler = function (event) {
   }
   generateTitleLinks('[data-author="' + author + '"]');
 
-}
+};
 
 const addClickListenersToAuthors = function () {
 
@@ -294,4 +294,4 @@ const addClickListenersToAuthors = function () {
 
   }
   addClickListenersToAuthors();
-}
+};
