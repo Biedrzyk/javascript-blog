@@ -235,7 +235,9 @@ function generateAuthors(){
 
   const authorWrapper = document.querySelectorAll(optAuthorSelector);
 
-  
+  let html = '';
+
+  const articleAuthor = document.getAttribute('data-author');
 
   }
 
