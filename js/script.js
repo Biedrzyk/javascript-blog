@@ -233,12 +233,17 @@ function generateAuthors(){
   
   for (let article of articles) {
 
-  const authorWrapper = document.querySelectorAll(optAuthorSelector);
+  const authorWrapper = article.querySelectorAll(optAuthorSelector);
 
   let html = '';
 
-  const articleAuthor = document.getAttribute('data-author');
+  const articleAuthor = article.getAttribute('data-author');
+  console.log('articleAuthor', articleAuthor);
 
+
+  const authorLinkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor  + '</span></a></li>';
+
+  console.log('authorLinkHTML', authorLinkHTML);
   }
 
 }
