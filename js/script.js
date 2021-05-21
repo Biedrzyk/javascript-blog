@@ -259,5 +259,14 @@ const authorClickHandler = function (event) {
   event.preventDefault();
   const clickedElement = this;
   const href = clickedElement.getAttribute('href');
+  const author = href.replace('#author-', '');
+  const activeAuthorLinks = document.querySelector('a.active[href^="#author-"]');
+
+  for (let activeAuthor of activeAuthorLinks) {
+
+    
+
+  }
+
 
 }
