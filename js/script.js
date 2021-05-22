@@ -53,7 +53,9 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags.list';
+  optTagsListSelector = '.tags.list',
+  optCloudClassCount = 5,
+  optCloudClassPrefix = 'tag-size-';
 
 function generateTitleLinks(customSelector = '') {
 
@@ -111,7 +113,6 @@ function calculateTagsParams(tags) {
 
   const params = {max: 0, min: 999999};
 
-
   for(let tag in tags){
     console.log(tag + ' is used ' + tags[tag] + ' times');
     params.max = Math.max(tags[tag], params.max);
@@ -119,6 +120,12 @@ function calculateTagsParams(tags) {
   }
 
   return params;
+}
+
+function calculateTagClass (count, params) {
+
+
+  
 }
 
 function generateTags() {
