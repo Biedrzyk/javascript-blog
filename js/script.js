@@ -52,7 +52,8 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optAuthorSelector = '.post-author';
+  optArticleAuthorSelector = '.post-author',
+  optTagsListSelector = '.tags.list';
 
 function generateTitleLinks(customSelector = '') {
 
@@ -67,6 +68,7 @@ function generateTitleLinks(customSelector = '') {
   const articles = document.querySelectorAll(optArticleSelector + customSelector);
   console.log('funkcja customSelector', customSelector);
   console.log('funkcja articles', articles);
+  console.log('funkcja optArticleSelector', optArticleSelector);
   let html = '';
 
   for (let article of articles) {
@@ -233,7 +235,7 @@ function generateAuthors() {
 
   for (let article of articles) {
 
-    const authorWrapper = article.querySelectorAll(optAuthorSelector);
+    const authorWrapper = article.querySelectorAll(optArticleAuthorSelector);
 
     let html = '';
 
