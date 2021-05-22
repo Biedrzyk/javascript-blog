@@ -108,6 +108,10 @@ function generateTitleLinks(customSelector = '') {
 generateTitleLinks();
 
 function generateTags() {
+
+  /* [NEW] create a new variable allTags with an empty array */
+  let allTags = [];
+
   /* find all articles */
 
   const articles = document.querySelectorAll(optArticleSelector);
@@ -148,7 +152,11 @@ function generateTags() {
       /* add generated code to html variable */
 
       html = html + tagLinkHTML;
-
+      /* [NEW] check if this link is NOT already in allTags */
+      if (allTags.indexOf(linkHTML) == -1) {
+        /* [NEW] add generated code to allTags array */
+        allTags.push(linkHTML);
+      }
       /* END LOOP: for each tag */
     }
     /* insert HTML of all the links into the tags wrapper */
@@ -158,6 +166,11 @@ function generateTags() {
 
     /* END LOOP: for every article: */
   }
+  /* [NEW] find list of tags in right column */
+  const tagList = document.querySelector('.tags');
+
+  /* [NEW] add html from allTags to tagList */
+  tagList.innerHTML = allTags.join(' ');
 }
 
 generateTags();
@@ -264,7 +277,7 @@ const authorClickHandler = function (event) {
   const href = clickedElement.getAttribute('href');
   console.log('href:', href);
 
-  const author = href.replace('#author-','');
+  const author = href.replace('#author-', '');
   console.log('author:', author);
 
   const activeAuthorLinks = document.querySelector('a[href^="#author-"]');
