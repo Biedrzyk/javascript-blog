@@ -65,8 +65,8 @@ function generateTitleLinks(customSelector = '') {
   /* for each article */
 
   const articles = document.querySelectorAll(optArticleSelector + customSelector);
-  console.log(customSelector);
-  console.log(articles);
+  console.log('funkcja customSelector', customSelector);
+  console.log('funkcja articles', articles);
   let html = '';
 
   for (let article of articles) {
@@ -262,10 +262,10 @@ const authorClickHandler = function (event) {
   const href = clickedElement.getAttribute('href');
   console.log('href:', href);
 
-  const author = href.replace('#author-', '');
+  const author = href.replace('#author-','');
   console.log('author:', author);
 
-  const activeAuthorLinks = document.querySelector('a.active[href^="#author-"]');
+  const activeAuthorLinks = document.querySelector('a[href^="#author-"]');
   console.log('activeAuthorLinks:', activeAuthorLinks);
 
   for (let activeAuthor of activeAuthorLinks) {
