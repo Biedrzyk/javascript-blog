@@ -213,7 +213,7 @@ function generateTags() {
     const tagLinkHTML = calculateTagClass(allTags[tag], tagsParams) ;
     console.log('tagLinkHTML:', tagLinkHTML);
 
-    allTagsHTML += /*tagLinkHTML*/ '<li><a class="' + tagLinkHTML + '" href="#tag-' + tag + '"><span>' + tag + '</a>' + '</span></li>'; /*do sprawdzenia!!!!!!!!!!!!!!!!!!!!!!*/
+    allTagsHTML +=  '<li><a class="' + tagLinkHTML + '" href="#tag-' + tag + '"><span>' + tag + '</a>' + '</span></li>';
     console.log('allTagsHTML: ', allTagsHTML);
 
   }
