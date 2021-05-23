@@ -125,7 +125,7 @@ function calculateTagsParams(tags) {
 function calculateTagClass (count, params) {
 
 
-  
+
 }
 
 function generateTags() {
@@ -204,7 +204,7 @@ function generateTags() {
     /* [NEW] generate code of a link and add it to allTagsHTML */
     /*allTagsHTML += tag + ' (' + allTags[tag] + ') ';*/
     console.log('allTagsHTML: ', allTagsHTML);
-    allTagsHTML += '<li><a href="#tag-' + tag + '"><span>' + tag + ' (' +allTags[tag] + ')' + '</span></a></li>';
+    allTagsHTML += '<li><a href="#tag-' + tag + '" class="calculateTagClass"><span>' + tag + ' (' +allTags[tag] + ')' + '</span></a></li>'; /*do sprawdzenia!!!!!!!!!!!!!!!!!!!!!!*/
     console.log('allTagsHTML: ', allTagsHTML);
   }
   /* [NEW] END LOOP: for each tag in allTags: */
