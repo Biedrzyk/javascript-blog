@@ -1,5 +1,6 @@
 const templates = {
-  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  tagWithLinks: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
 }
 
 'use strict';
@@ -92,7 +93,10 @@ function generateTitleLinks(customSelector = '') {
 
     /* create HTML of the link */
 
-    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    const linkHTMLData = {id: articleId, title: articleTitle};
+    const linkHTML = templates.articleLink(linkHTMLData);
+
+    /*const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';*/
     console.log(linkHTML);
 
     /* insert link into titleList */
@@ -179,7 +183,11 @@ function generateTags() {
       console.log('Generate tags:', tag);
       /* generate HTML of the link */
 
-      const tagLinkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+      const tagHTMLData = {id: tag, title: tag};
+      const tagHTML = templates.tagWithLink(tagHTMLData);
+
+
+      /*const tagLinkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';*/
       console.log(tagLinkHTML);
 
       /* add generated code to html variable */
