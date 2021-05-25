@@ -1,6 +1,7 @@
 const templates = {
   articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
   tagWithLinks: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
+  authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
 }
 
 'use strict';
@@ -319,6 +320,9 @@ function generateAuthors() {
 
     const articleAuthor = article.getAttribute('data-author');
     console.log('articleAuthor', articleAuthor);
+
+    const authorHTMLData = {id: articleAuthor, title: articleAuthor};
+    const authorHTML = templates.authorLink(authorHTMLData);
 
 
     const authorLinkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
