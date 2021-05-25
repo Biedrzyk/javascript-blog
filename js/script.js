@@ -1,3 +1,7 @@
+const templates = {
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML)
+}
+
 'use strict';
 
 /*document.getElementById('test-button').addEventListener('click', function(){
