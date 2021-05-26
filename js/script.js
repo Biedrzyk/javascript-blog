@@ -342,10 +342,10 @@ function generateAuthors() {
     html = html + authorHTML;
 
     if (!allAuthors[articleAuthor]) {
-      allAuthors[articleAuthor] = 1
+      allAuthors[articleAuthor] = 1;
     }
     else {
-      allAuthors[articleAuthor]++
+      allAuthors[articleAuthor]++;
     }
     console.log('allAuthors: ', allAuthors);
 
@@ -357,14 +357,20 @@ function generateAuthors() {
   const authorList = document.querySelector('.authors');
   console.log('authorList: ', authorList);
 
-  let allAuthorsHTML = '';
+  /*let allAuthorsHTML = '';*/
+  const allAuthorsLinks = {authors: []};
 
   for (let author in allAuthors) {
 
-    allAuthorsHTML += '<li><a href="#author-' + author + '"><span>' + author + '</a>' + '</span></li>';
-    console.log('allAuthorsHTML: ', JSON.stringify(allAuthorsHTML));
+    allAuthorsLinks.authors.push({
+      author: author,
+      count: allAuthors[author],
+    });
+    /*allAuthorsHTML += '<li><a href="#author-' + author + '"><span>' + author + '</a>' + '</span></li>';
+    console.log('allAuthorsHTML: ', JSON.stringify(allAuthorsHTML));*/
   }
-authorList.innerHTML = allAuthorsHTML;
+authorList.innerHTML = templates.authorsLinks(allAuthorsLinks);
+console.log('allAuthorsLinks', allAuthorsLinks);
 }
 
 generateAuthors();
