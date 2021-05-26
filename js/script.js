@@ -325,7 +325,7 @@ function generateAuthors() {
     const authorHTML = templates.authorLink(authorHTMLData);
 
 
-    const authorLinkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';
+    /*const authorLinkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';*/
 
     console.log('authorLinkHTML', authorLinkHTML);
 
