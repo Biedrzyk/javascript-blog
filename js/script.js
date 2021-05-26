@@ -3,6 +3,7 @@ const templates = {
   tagWithLinks: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML),
   authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
   tagCloudLink: Handlebars.compile(document.querySelector('#template-tagCloudLink-link').innerHTML),
+  authorsLinks: Handlebars.compile(document.querySelector('#template-authorsLinks-link').innerHTML),
 }
 
 'use strict';
