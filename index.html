@@ -246,6 +246,11 @@
             </main>
         </div>
     </div>
+    <script id="template-tagCloudLink-link" type="text/x-handlebars-template">
+        {{#each tags}}
+        <li><a href="#{{count}}" class="{{className}}">{{ tag }}</a></li>
+        {{/each}}
+      </script>
     <script id="template-article-link" type="text/x-handlebars-template">
         <li><a href="#{{ id }}"><span>{{ title }}</span></a></li>
       </script>

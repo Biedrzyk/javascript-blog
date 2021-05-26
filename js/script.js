@@ -186,15 +186,15 @@ function generateTags() {
       /* generate HTML of the link */
 
       const tagHTMLData = {id: tag, title: tag};
-      const tagHTML = templates.tagWithLink(tagHTMLData);
+      const tagHTML = templates.tagWithLinks(tagHTMLData);
 
 
       /*const tagLinkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';*/
-      console.log(tagLinkHTML);
+      /*console.log(tagLinkHTML);*/
 
       /* add generated code to html variable */
 
-      html = html + tagLinkHTML;
+      html = html + tagHTML;
       /* [NEW] check if this link is NOT already in allTags */
       if (!allTags[tag]) {
         /* [NEW] add generated code to allTags array */
@@ -219,7 +219,7 @@ function generateTags() {
   const tagsParams = calculateTagsParams(allTags);
   console.log('tagsParams:', tagsParams);
   /* [NEW] create variable for all links HTML code */
-  /*let allTagsHTML = '';*/
+  /*let allTagsHTML = '';-------------------------*/
   const allTagsData = {tags: []};
   /* [NEW] START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
@@ -336,9 +336,9 @@ function generateAuthors() {
 
     /*const authorLinkHTML = '<li><a href="#author-' + articleAuthor + '"><span>' + articleAuthor + '</span></a></li>';*/
 
-    console.log('authorLinkHTML', authorLinkHTML);
+    /*console.log('authorLinkHTML', authorLinkHTML);*/
 
-    html = html + authorLinkHTML;
+    html = html + authorHTML;
 
     if (!allAuthors[articleAuthor]) {
       allAuthors[articleAuthor] = 1
